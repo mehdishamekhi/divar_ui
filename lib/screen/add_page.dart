@@ -1,0 +1,682 @@
+import 'package:divar_ui/util/colors.dart';
+import 'package:divar_ui/widgets/category_container.dart';
+import 'package:divar_ui/widgets/red_bottom.dart';
+import 'package:dotted_line/dotted_line.dart';
+import 'package:flutter/material.dart';
+
+class AddPage extends StatefulWidget {
+  const AddPage({super.key});
+
+  @override
+  State<AddPage> createState() => _AddPageState();
+}
+
+double _progress = 0;
+int currentpage = 0;
+final PageController _progresscontroller = PageController(initialPage: 0);
+
+class _AddPageState extends State<AddPage> {
+  @override
+  void initState() {
+    super.initState();
+    _progress = 1 / 5;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Center(
+            child: Image.asset('assets/images/Group 1.png'),
+          ),
+          leading: Image.asset('assets/images/arrow-right.png'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Image.asset('assets/images/close-square.png'),
+            ),
+          ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(5),
+            child: LinearProgressIndicator(
+              minHeight: 5,
+              value: _progress,
+              color: AppColor.red,
+              backgroundColor: AppColor.white,
+            ),
+          ),
+        ),
+        body: PageView(
+          controller: _progresscontroller,
+          onPageChanged: (int page) {
+            setState(() {
+              currentpage = page;
+              _progress = (currentpage + 1) / 5;
+            });
+          },
+          children: const [
+            Page1(),
+            Page2(),
+            Page3(),
+            Page4(),
+            Page5(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  const Page1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'اجاره مسکونی',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'فروش مسکونی',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'فروش دفاتر اداری و تجاری',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'اجاره دفاتر اداری و تجاری',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'اجاره کوتاه مدت',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'پروژه های ساخت و ساز',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+      ],
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'فروش آپارتمان',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'فروش خانه و ویلا',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        CategoryContainerwithouticon(
+          topic: 'فروش زمین کلنگی',
+          arrowaddress: 'assets/images/arrow-left-r.png',
+        ),
+      ],
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  const Page3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var controller = PageController();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+              ),
+              child: Row(
+                children: [
+                  Image.asset('assets/images/category-2.png'),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    'انتخاب دسته بندی آویز',
+                    style: TextStyle(
+                      fontFamily: 'shabnam',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Row(
+              children: [
+                PopUpMenuBottoms(
+                  topic: 'دسته بندی',
+                  item1: 'فروش آپارتمان',
+                  item2: 'فروش خانه',
+                  item3: 'فروش ویلا',
+                ),
+                Spacer(),
+                PopUpMenuBottoms(
+                  topic: 'محدوده ملک',
+                  item1: 'فرشته',
+                  item2: 'نازی آباد',
+                  item3: 'زعفرانیه',
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const DottedLine(
+              dashColor: AppColor.grey,
+              direction: Axis.horizontal,
+              lineLength: double.infinity,
+              dashGapLength: 0,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 30,
+                bottom: 20,
+              ),
+              child: Row(
+                children: [
+                  Image.asset('assets/images/clipboard.png'),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    'ویژگی ها',
+                    style: TextStyle(
+                      fontFamily: 'shabnam',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Row(
+              children: [
+                PopUpMenuBottoms(
+                  topic: 'متراژ',
+                  item1: '۱۰۰',
+                  item2: '۲۰۰',
+                  item3: '۳۰۰',
+                ),
+                Spacer(),
+                PopUpMenuBottoms(
+                  topic: 'تعداد اتاق',
+                  item1: '۱',
+                  item2: '۲',
+                  item3: '۳',
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                PopUpMenuBottoms(
+                  topic: 'طبقه',
+                  item1: '۱',
+                  item2: '۲',
+                  item3: '۳',
+                ),
+                Spacer(),
+                PopUpMenuBottoms(
+                  topic: 'سال ساخت',
+                  item1: '۱۳۹۵',
+                  item2: '۱۴۰۰',
+                  item3: '۱۴۰۲',
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const DottedLine(
+              dashColor: AppColor.grey,
+              direction: Axis.horizontal,
+              lineLength: double.infinity,
+              dashGapLength: 0,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 30,
+                bottom: 20,
+              ),
+              child: Row(
+                children: [
+                  Image.asset('assets/images/magicpen.png'),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text(
+                    'امکانات',
+                    style: TextStyle(
+                      fontFamily: 'shabnam',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const CategoryContainerwithouticon(
+              topic: 'آسانسور',
+              arrowaddress: 'assets/images/toggle-on-circle.png',
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const CategoryContainerwithouticon(
+              topic: 'پارکینگ',
+              arrowaddress: 'assets/images/toggle-off-circle.png',
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const CategoryContainerwithouticon(
+              topic: 'انباری',
+              arrowaddress: 'assets/images/toggle-on-circle.png',
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const RedBottom(
+              radius: 4,
+              width: double.infinity,
+              height: 40,
+              topic: 'بعدی',
+              fontsize: 16,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Page4 extends StatelessWidget {
+  const Page4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 20,
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Image.asset('assets/images/map.png'),
+              const SizedBox(
+                width: 10,
+              ),
+              const Text(
+                'موقیعت مکانی',
+                style: TextStyle(
+                  fontFamily: 'shabnam',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20),
+            child: Text(
+              'بعد انتخاب محل دقیق روی نقشه میتوانید نمایش آن را فعال یا غیر فعال کنید تا حریم خصوصی شما حفظ شود',
+              style: TextStyle(
+                fontFamily: 'shabnam',
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 203, 205, 207),
+                fontSize: 14,
+              ),
+            ),
+          ),
+          Image.asset('assets/images/mapi.png'),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20),
+            child: CategoryContainerwithouticon(
+              topic: 'موقعیت دقیق نقشه نمایش داده شود؟',
+              arrowaddress: 'assets/images/toggle-on-circle.png',
+            ),
+          ),
+          const Spacer(),
+          const RedBottom(
+            radius: 4,
+            width: double.infinity,
+            height: 40,
+            topic: 'بعدی',
+            fontsize: 16,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Page5 extends StatelessWidget {
+  const Page5({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var controller = PageController();
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 20,
+      ),
+      child: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Image.asset('assets/images/camera.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  'تصویر آویز',
+                  style: TextStyle(
+                    fontFamily: 'shabnam',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Image.asset('assets/images/dropphoto.png'),
+            ),
+            Row(
+              children: [
+                Image.asset('assets/images/edit-2.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  'عنوان آویز',
+                  style: TextStyle(
+                    fontFamily: 'shabnam',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Container(
+                width: double.infinity,
+                height: 48,
+                decoration: const BoxDecoration(
+                  color: AppColor.grey,
+                  borderRadius: BorderRadiusDirectional.all(
+                    Radius.circular(4),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'عنوان آویز را وارد کنید',
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                Image.asset('assets/images/clipboard-text.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  'توضیحات',
+                  style: TextStyle(
+                    fontFamily: 'shabnam',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Container(
+                width: double.infinity,
+                height: 104,
+                decoration: const BoxDecoration(
+                  color: AppColor.grey,
+                  borderRadius: BorderRadiusDirectional.all(
+                    Radius.circular(4),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'توضیحات آویز را وارد کنید',
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: CategoryContainerwithouticon(
+                topic: 'فعال کردن گفتگو',
+                arrowaddress: 'assets/images/toggle-on-circle.png',
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: CategoryContainerwithouticon(
+                topic: 'فعال کردن تماس',
+                arrowaddress: 'assets/images/toggle-off-circle.png',
+              ),
+            ),
+            const RedBottom(
+              radius: 4,
+              width: double.infinity,
+              height: 40,
+              topic: 'ثبت آگهی',
+              fontsize: 16,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PopUpMenuBottoms extends StatefulWidget {
+  final String topic;
+  final String item1;
+  final String item2;
+  final String item3;
+
+  const PopUpMenuBottoms({
+    super.key,
+    required this.topic,
+    required this.item1,
+    required this.item2,
+    required this.item3,
+  });
+
+  @override
+  State<PopUpMenuBottoms> createState() => _PopUpMenuBottomsState();
+}
+
+class _PopUpMenuBottomsState extends State<PopUpMenuBottoms> {
+  String selectedMenu = 'انتخاب کنید';
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 85,
+      width: 160,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            widget.topic,
+            style: const TextStyle(
+              fontFamily: 'shabnam',
+              fontSize: 14,
+              color: Color.fromARGB(255, 209, 211, 213),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Spacer(),
+          Container(
+            height: 48,
+            width: 159,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+              color: AppColor.grey,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: Directionality(
+                textDirection: TextDirection.ltr,
+                child: Row(
+                  children: [
+                    PopupMenuButton(
+                      icon: Image.asset(
+                        'assets/images/Frame 46.png',
+                        height: 24,
+                        width: 8,
+                      ),
+                      onSelected: (item) {
+                        setState(() {
+                          selectedMenu = item.toString();
+                        });
+                      },
+                      itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                        PopupMenuItem(
+                          value: widget.item1,
+                          textStyle: const TextStyle(
+                            fontFamily: 'shanam',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColor.black,
+                          ),
+                          child: Text(
+                            widget.item1,
+                            style: const TextStyle(
+                              fontFamily: 'shanam',
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.black,
+                            ),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          value: widget.item2,
+                          textStyle: const TextStyle(
+                            fontFamily: 'shanam',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColor.black,
+                          ),
+                          child: Text(
+                            widget.item2,
+                            style: const TextStyle(
+                              fontFamily: 'shanam',
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.black,
+                            ),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          value: widget.item3,
+                          textStyle: const TextStyle(
+                            fontFamily: 'shanam',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColor.black,
+                          ),
+                          child: Text(
+                            widget.item3,
+                            style: const TextStyle(
+                              fontFamily: 'shanam',
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Text(
+                      selectedMenu,
+                      style: const TextStyle(
+                        fontFamily: 'shanam',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

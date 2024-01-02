@@ -1,4 +1,6 @@
+import 'package:divar_ui/screen/add_page.dart';
 import 'package:divar_ui/screen/home_screen.dart';
+import 'package:divar_ui/screen/item_detail.dart';
 import 'package:divar_ui/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: ItemDetailScreen(),
     );
   }
 }
