@@ -18,21 +18,21 @@ class RedBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        minimumSize: Size(width, height),
-        backgroundColor: AppColor.red,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius),
-        ),
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius),
+        color: AppColor.red,
       ),
-      onPressed: () {},
-      child: Text(
-        topic,
-        style: TextStyle(
-          fontSize: fontsize,
-          fontFamily: 'shabnam',
-          color: AppColor.white,
+      child: Center(
+        child: Text(
+          topic,
+          style: TextStyle(
+            fontSize: fontsize,
+            fontFamily: 'shabnam',
+            color: AppColor.white,
+          ),
         ),
       ),
     );

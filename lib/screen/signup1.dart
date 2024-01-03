@@ -1,3 +1,5 @@
+import 'package:divar_ui/screen/login1.dart';
+import 'package:divar_ui/screen/signup2.dart';
 import 'package:divar_ui/util/colors.dart';
 import 'package:divar_ui/widgets/red_bottom_icon.dart';
 import 'package:divar_ui/widgets/textfield.dart';
@@ -62,20 +64,28 @@ class Signup1 extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const RedBottomicon(
-                  radius: 4,
-                  width: double.infinity,
-                  height: 48,
-                  topic: 'مرحله بعد',
-                  fontsize: 16,
-                  icon: 'assets/images/arrow-right.png',
+                InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Siginup2(),
+                    ),
+                  ),
+                  child: const RedBottomicon(
+                    radius: 4,
+                    width: double.infinity,
+                    height: 48,
+                    topic: 'مرحله بعد',
+                    fontsize: 16,
+                    icon: 'assets/images/arrow-right.png',
+                  ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'قبلا ثبت نام کردی؟',
                         style: TextStyle(
                           fontSize: 16,
@@ -84,16 +94,24 @@ class Signup1 extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'ورود',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'shabnam',
-                          color: AppColor.red,
-                          fontWeight: FontWeight.bold,
+                      InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Login1(),
+                          ),
+                        ),
+                        child: const Text(
+                          'ورود',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'shabnam',
+                            color: AppColor.red,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],

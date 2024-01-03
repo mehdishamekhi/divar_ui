@@ -1,3 +1,5 @@
+import 'package:divar_ui/screen/login1.dart';
+import 'package:divar_ui/screen/signup1.dart';
 import 'package:divar_ui/util/colors.dart';
 import 'package:divar_ui/widgets/red_bottom.dart';
 import 'package:flutter/material.dart';
@@ -94,32 +96,48 @@ class WellcomePage extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      const RedBottom(
-                        radius: 4,
-                        width: 159,
-                        height: 40,
-                        topic: 'ثبت نام',
-                        fontsize: 14,
+                      InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Signup1(),
+                          ),
+                        ),
+                        child: const RedBottom(
+                          radius: 4,
+                          width: 159,
+                          height: 40,
+                          topic: 'ثبت نام',
+                          fontsize: 14,
+                        ),
                       ),
                       const Spacer(),
-                      Container(
-                        height: 40,
-                        width: 159,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColor.red,
+                      InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Login1(),
                           ),
-                          borderRadius: BorderRadius.circular(4),
                         ),
-                        child: const Center(
-                          child: Text(
-                            'ورود',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'shabnam',
+                        child: Container(
+                          height: 40,
+                          width: 159,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 1,
                               color: AppColor.red,
-                              fontWeight: FontWeight.bold,
+                            ),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'ورود',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: 'shabnam',
+                                color: AppColor.red,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),

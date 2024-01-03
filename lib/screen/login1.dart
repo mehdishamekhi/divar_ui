@@ -1,3 +1,5 @@
+import 'package:divar_ui/screen/login2.dart';
+import 'package:divar_ui/screen/signup1.dart';
 import 'package:divar_ui/util/colors.dart';
 import 'package:divar_ui/widgets/red_bottom_icon.dart';
 import 'package:divar_ui/widgets/textfield.dart';
@@ -53,20 +55,28 @@ class Login1 extends StatelessWidget {
                   hinttext: 'شماره موبایل',
                 ),
                 const Spacer(),
-                const RedBottomicon(
-                  radius: 4,
-                  width: double.infinity,
-                  height: 48,
-                  topic: 'مرحله بعد',
-                  fontsize: 16,
-                  icon: 'assets/images/arrow-right.png',
+                InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Login2(),
+                    ),
+                  ),
+                  child: const RedBottomicon(
+                    radius: 4,
+                    width: double.infinity,
+                    height: 48,
+                    topic: 'مرحله بعد',
+                    fontsize: 16,
+                    icon: 'assets/images/arrow-right.png',
+                  ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'تاحالا ثبت نام نکردی؟',
                         style: TextStyle(
                           fontSize: 16,
@@ -75,16 +85,24 @@ class Login1 extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'ثبت نام',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'shabnam',
-                          color: AppColor.red,
-                          fontWeight: FontWeight.bold,
+                      InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Signup1(),
+                          ),
+                        ),
+                        child: const Text(
+                          'ثبت نام',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'shabnam',
+                            color: AppColor.red,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],

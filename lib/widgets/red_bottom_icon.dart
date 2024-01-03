@@ -20,15 +20,13 @@ class RedBottomicon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          maximumSize: Size(width, height),
-          backgroundColor: AppColor.red,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(radius),
-          ),
+    return Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius),
+          color: AppColor.red,
         ),
-        onPressed: () {},
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
