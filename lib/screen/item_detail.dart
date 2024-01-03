@@ -40,22 +40,14 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
         child: Center(
           child: Text(
             title,
-            style: const TextStyle(
-              fontSize: 12,
-              fontFamily: 'shabnam',
-              color: AppColor.white,
-            ),
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ),
       );
     } else {
       return Text(
         title,
-        style: const TextStyle(
-          fontSize: 12,
-          fontFamily: 'shabnam',
-          color: AppColor.red,
-        ),
+        style: Theme.of(context).textTheme.displaySmall,
       );
     }
   }
@@ -109,41 +101,28 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                           borderRadius: BorderRadius.circular(4),
                           color: AppColor.grey,
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             'آپارتمان',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'shabnam',
-                              color: AppColor.red,
-                            ),
+                            style: Theme.of(context).textTheme.headlineLarge,
                           ),
                         ),
                       ),
                       const Spacer(),
-                      const Text(
+                      Text(
                         '۱۶ دقیقه پیش در گرگان',
-                        style: TextStyle(
-                          fontFamily: 'shabnam',
-                          fontSize: 14,
-                          color: AppColor.grey,
-                        ),
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ],
                   ),
                 ),
               ),
-              const SliverToBoxAdapter(
+              SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Text(
                     'آپارتمان ۵۰۰ متری در صیاد شیرازی',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontSize: 16,
-                      color: AppColor.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
               ),
@@ -188,17 +167,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen>
                     Page3(page3: page3),
                     SingleChildScrollView(
                       controller: page4,
-                      child: const Column(
+                      child: Column(
                         children: [
                           Text(
                             'ویلا ۵۰۰ متری در خیابان صیاد شیرازی ویو عالی وسط جنگل قیمت فوق العاده گذاشتم فروش فوری خریدار باشی تخفیف پای معامله میدم',
-                            style: TextStyle(
-                              fontFamily: 'shabnam',
-                              color: AppColor.grey,
-                              fontSize: 16,
-                            ),
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.symmetric(
                               vertical: 15,
                               horizontal: 20,
@@ -259,13 +234,9 @@ class Page3 extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              const Text(
+              Text(
                 'ویژگی ها',
-                style: TextStyle(
-                  fontFamily: 'shabnam',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ],
           ),
@@ -283,8 +254,8 @@ class Page3 extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(4),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(10),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -292,24 +263,16 @@ class Page3 extends StatelessWidget {
                       children: [
                         Text(
                           'سند',
-                          style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           'تک برگ',
-                          style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
                       ],
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -319,20 +282,12 @@ class Page3 extends StatelessWidget {
                       children: [
                         Text(
                           'جهت ساختمان',
-                          style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           'شمالی',
-                          style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
                       ],
                     ),
@@ -347,13 +302,9 @@ class Page3 extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              const Text(
+              Text(
                 'امکانات',
-                style: TextStyle(
-                  fontFamily: 'shabnam',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ],
           ),
@@ -371,21 +322,17 @@ class Page3 extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(4),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(10),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'پارکینگ',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -393,13 +340,9 @@ class Page3 extends StatelessWidget {
                     ),
                     Text(
                       'انباری',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -407,13 +350,9 @@ class Page3 extends StatelessWidget {
                     ),
                     Text(
                       'بالکن',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -421,13 +360,9 @@ class Page3 extends StatelessWidget {
                     ),
                     Text(
                       'آسانسور',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -435,13 +370,9 @@ class Page3 extends StatelessWidget {
                     ),
                     Text(
                       'پنت هاوس',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -449,13 +380,9 @@ class Page3 extends StatelessWidget {
                     ),
                     Text(
                       'جنس کف سرامیک',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    DottedLine(
+                    const DottedLine(
                       dashColor: AppColor.grey,
                       direction: Axis.horizontal,
                       lineLength: double.infinity,
@@ -463,11 +390,7 @@ class Page3 extends StatelessWidget {
                     ),
                     Text(
                       'سرویس بهداشتی ایرانی و فرنگی',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
                   ],
                 ),
@@ -531,8 +454,8 @@ class Page2 extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(4),
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(10),
+            child: Padding(
+              padding: const EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -540,24 +463,16 @@ class Page2 extends StatelessWidget {
                     children: [
                       Text(
                         'قیمت هر متر:',
-                        style: TextStyle(
-                          fontFamily: 'shabnam',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         '۴۶٫۴۶۰٫۰۰۰',
-                        style: TextStyle(
-                          fontFamily: 'shabnam',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
                     ],
                   ),
-                  DottedLine(
+                  const DottedLine(
                     dashColor: AppColor.grey,
                     direction: Axis.horizontal,
                     lineLength: double.infinity,
@@ -567,20 +482,12 @@ class Page2 extends StatelessWidget {
                     children: [
                       Text(
                         'قیمت کل:',
-                        style: TextStyle(
-                          fontFamily: 'shabnam',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         '۲۳٫۲۳۰٫۰۰۰٫۰۰۰',
-                        style: TextStyle(
-                          fontFamily: 'shabnam',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
                     ],
                   ),
@@ -645,25 +552,22 @@ class Page1 extends StatelessWidget {
                 color: AppColor.grey,
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(15),
+            child: Padding(
+              padding: const EdgeInsets.all(15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('متراژ'),
+                      const Text('متراژ'),
                       Text(
                         '۵۰۰',
-                        style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
                     ],
                   ),
-                  DottedLine(
+                  const DottedLine(
                     dashColor: AppColor.grey,
                     direction: Axis.vertical,
                     lineLength: double.infinity,
@@ -672,17 +576,14 @@ class Page1 extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('اتاق'),
+                      const Text('اتاق'),
                       Text(
                         '۶',
-                        style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
                     ],
                   ),
-                  DottedLine(
+                  const DottedLine(
                     dashColor: AppColor.grey,
                     direction: Axis.vertical,
                     lineLength: double.infinity,
@@ -691,17 +592,14 @@ class Page1 extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('طبقه'),
+                      const Text('طبقه'),
                       Text(
                         'دوبلکس',
-                        style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
                     ],
                   ),
-                  DottedLine(
+                  const DottedLine(
                     dashColor: AppColor.grey,
                     direction: Axis.vertical,
                     lineLength: double.infinity,
@@ -710,13 +608,10 @@ class Page1 extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('ساخت'),
+                      const Text('ساخت'),
                       Text(
                         '۱۴۰۲',
-                        style: TextStyle(
-                            fontFamily: 'shabnam',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.displayLarge,
                       ),
                     ],
                   ),
@@ -735,13 +630,9 @@ class Page1 extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
+                Text(
                   'موقعیت مکانی',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),

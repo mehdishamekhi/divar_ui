@@ -45,38 +45,23 @@ class WellcomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       'اینجا محل',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'shabnam',
-                        color: AppColor.black,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     Image.asset('assets/images/loginframe.png'),
-                    const Text(
+                    Text(
                       'آگهی شماست',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'shabnam',
-                        color: AppColor.black,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ],
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
+                Text(
                   'در آویز ملک خود را برای فروش ٫اجاره و رهن آگهی کنید و یا اگر دنبال ملک بامشخصات دلخواه خود هستید آویز ها را ببنید',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'shabnam',
-                    color: AppColor.grey,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const Spacer(),
                 SmoothPageIndicator(
@@ -129,15 +114,10 @@ class WellcomePage extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               'ورود',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'shabnam',
-                                color: AppColor.red,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: Theme.of(context).textTheme.labelSmall,
                             ),
                           ),
                         ),

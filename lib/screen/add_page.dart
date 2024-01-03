@@ -178,13 +178,9 @@ class Page3 extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Text(
+                  Text(
                     'انتخاب دسته بندی آویز',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -226,13 +222,9 @@ class Page3 extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Text(
+                  Text(
                     'ویژگی ها',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -294,13 +286,9 @@ class Page3 extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Text(
+                  Text(
                     'امکانات',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -358,26 +346,17 @@ class Page4 extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              const Text(
+              Text(
                 'موقیعت مکانی',
-                style: TextStyle(
-                  fontFamily: 'shabnam',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
             child: Text(
               'بعد انتخاب محل دقیق روی نقشه میتوانید نمایش آن را فعال یا غیر فعال کنید تا حریم خصوصی شما حفظ شود',
-              style: TextStyle(
-                fontFamily: 'shabnam',
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 203, 205, 207),
-                fontSize: 14,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Image.asset('assets/images/mapi.png'),
@@ -423,13 +402,9 @@ class Page5 extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
+                Text(
                   'تصویر آویز',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),
@@ -443,13 +418,9 @@ class Page5 extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
+                Text(
                   'عنوان آویز',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),
@@ -481,13 +452,9 @@ class Page5 extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
+                Text(
                   'توضیحات',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),
@@ -571,12 +538,7 @@ class _PopUpMenuBottomsState extends State<PopUpMenuBottoms> {
         children: [
           Text(
             widget.topic,
-            style: const TextStyle(
-              fontFamily: 'shabnam',
-              fontSize: 14,
-              color: Color.fromARGB(255, 209, 211, 213),
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const Spacer(),
           Container(
@@ -606,56 +568,26 @@ class _PopUpMenuBottomsState extends State<PopUpMenuBottoms> {
                       itemBuilder: (BuildContext context) => <PopupMenuEntry>[
                         PopupMenuItem(
                           value: widget.item1,
-                          textStyle: const TextStyle(
-                            fontFamily: 'shanam',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.black,
-                          ),
+                          textStyle: Theme.of(context).textTheme.titleLarge,
                           child: Text(
                             widget.item1,
-                            style: const TextStyle(
-                              fontFamily: 'shanam',
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: AppColor.black,
-                            ),
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
                         PopupMenuItem(
                           value: widget.item2,
-                          textStyle: const TextStyle(
-                            fontFamily: 'shanam',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.black,
-                          ),
+                          textStyle: Theme.of(context).textTheme.titleLarge,
                           child: Text(
                             widget.item2,
-                            style: const TextStyle(
-                              fontFamily: 'shanam',
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: AppColor.black,
-                            ),
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
                         PopupMenuItem(
                           value: widget.item3,
-                          textStyle: const TextStyle(
-                            fontFamily: 'shanam',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.black,
-                          ),
+                          textStyle: Theme.of(context).textTheme.titleLarge,
                           child: Text(
                             widget.item3,
-                            style: const TextStyle(
-                              fontFamily: 'shanam',
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: AppColor.black,
-                            ),
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
                       ],
@@ -663,12 +595,7 @@ class _PopUpMenuBottomsState extends State<PopUpMenuBottoms> {
                     const Spacer(),
                     Text(
                       selectedMenu,
-                      style: const TextStyle(
-                        fontFamily: 'shanam',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.black,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ],
                 ),

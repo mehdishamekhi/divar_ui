@@ -1,4 +1,5 @@
 import 'package:divar_ui/screen/welcome_page.dart';
+import 'package:divar_ui/util/font_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: CustomTheme.defaultTheme,
       debugShowCheckedModeBanner: false,
-      home: WellcomePage(),
+      home: const WellcomePage(),
     );
   }
 }

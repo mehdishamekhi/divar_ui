@@ -38,11 +38,7 @@ class CategoryContainerwithicon extends StatelessWidget {
             const Spacer(),
             Text(
               topic,
-              style: const TextStyle(
-                fontFamily: 'shabnam',
-                fontSize: 16,
-                color: AppColor.black,
-              ),
+              style: Theme.of(context).textTheme.displayMedium,
             ),
             const SizedBox(
               width: 5,

@@ -1,6 +1,5 @@
 import 'package:divar_ui/screen/login1.dart';
 import 'package:divar_ui/screen/signup2.dart';
-import 'package:divar_ui/util/colors.dart';
 import 'package:divar_ui/widgets/red_bottom_icon.dart';
 import 'package:divar_ui/widgets/textfield.dart';
 import 'package:flutter/material.dart';
@@ -24,28 +23,18 @@ class Signup1 extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Text(
+                    Text(
                       'خوش اومدی به',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'shabnam',
-                        color: AppColor.black,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     Image.asset('assets/images/loginframe.png'),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Text(
                     'این فوق العاده است که آویز رو برای آگهی هات انتخاب کردی!',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'shabnam',
-                      color: AppColor.grey,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ),
                 const Textfieldcontainer(
@@ -85,14 +74,9 @@ class Signup1 extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         'قبلا ثبت نام کردی؟',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'shabnam',
-                          color: AppColor.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
                       const SizedBox(
                         width: 10,
@@ -104,14 +88,9 @@ class Signup1 extends StatelessWidget {
                             builder: (context) => const Login1(),
                           ),
                         ),
-                        child: const Text(
+                        child: Text(
                           'ورود',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'shabnam',
-                            color: AppColor.red,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
                     ],

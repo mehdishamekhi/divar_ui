@@ -22,16 +22,8 @@ class _WholeScreenState extends State<WholeScreen> {
           currentIndex: selecttednavigationitem,
           selectedItemColor: AppColor.red,
           unselectedItemColor: AppColor.grey,
-          selectedLabelStyle: const TextStyle(
-            fontFamily: 'shabnam',
-            fontSize: 16,
-            color: AppColor.red,
-          ),
-          unselectedLabelStyle: const TextStyle(
-            fontFamily: 'shabnam',
-            fontSize: 16,
-            color: AppColor.grey,
-          ),
+          selectedLabelStyle: Theme.of(context).textTheme.labelMedium,
+          unselectedLabelStyle: Theme.of(context).textTheme.headlineMedium,
           onTap: (int index) {
             setState(() {
               selecttednavigationitem = index;

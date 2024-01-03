@@ -40,12 +40,7 @@ class _TextfieldcontainerState extends State<Textfieldcontainer> {
       child: TextField(
         decoration: InputDecoration(
           hintText: widget.hinttext,
-          hintStyle: const TextStyle(
-            fontSize: 16,
-            fontFamily: 'shabnam',
-            color: AppColor.grey,
-            fontWeight: FontWeight.bold,
-          ),
+          hintStyle: Theme.of(context).textTheme.bodySmall,
           filled: true,
           fillColor: _focusNode.hasFocus
               ? AppColor.greyforground

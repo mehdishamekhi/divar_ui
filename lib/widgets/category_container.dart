@@ -31,11 +31,7 @@ class CategoryContainerwithouticon extends StatelessWidget {
           children: [
             Text(
               topic,
-              style: const TextStyle(
-                fontFamily: 'shabnam',
-                fontSize: 16,
-                color: AppColor.black,
-              ),
+              style: Theme.of(context).textTheme.displayMedium,
             ),
             const Spacer(),
             Image.asset(arrowaddress),

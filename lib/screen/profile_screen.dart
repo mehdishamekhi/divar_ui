@@ -100,12 +100,9 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
+                Text(
                   'نسخه\n۱.۵.۹',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    color: AppColor.grey,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),
@@ -144,33 +141,27 @@ class personal_info extends StatelessWidget {
               width: 24,
             ),
             const Spacer(),
-            const Column(
+            Column(
               children: [
                 Text(
                   'مهدی شامخی',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: 'shabnam',
-                  ),
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
                 Row(
                   children: [
-                    RedBottom(
+                    const RedBottom(
                       radius: 4,
                       width: 66,
                       height: 26,
                       topic: 'تایید شده',
                       fontsize: 12,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Text(
                       '۰۹۱۸۵۸۶۵۹۱۷',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'shabnam',
-                      ),
+                      style: Theme.of(context).textTheme.displayMedium,
                     ),
                   ],
                 ),
@@ -208,13 +199,9 @@ class hesabkarbary extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        const Text(
+        Text(
           'حساب کاربری',
-          style: TextStyle(
-            fontSize: 16,
-            color: AppColor.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(
           width: 5,
@@ -260,15 +247,11 @@ class search_container extends StatelessWidget {
                 textAlign: TextAlign.right,
                 textDirection: TextDirection.rtl,
                 controller: searchcontroller,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'جستجو...',
                   hintTextDirection: TextDirection.rtl,
-                  hintStyle: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontSize: 16,
-                    color: AppColor.grey,
-                  ),
+                  hintStyle: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
             ),

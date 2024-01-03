@@ -1,5 +1,4 @@
 import 'package:divar_ui/screen/whole_screen.dart';
-import 'package:divar_ui/util/colors.dart';
 import 'package:divar_ui/widgets/red_bottom.dart';
 import 'package:divar_ui/widgets/textfield.dart';
 import 'package:flutter/material.dart';
@@ -21,25 +20,15 @@ class Siginup2 extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'تایید شماره موبایل',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'shabnam',
-                    color: AppColor.black,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Text(
                     'کد ثبت نام پیامک شده را وارد کنید',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'shabnam',
-                      color: AppColor.grey,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ),
                 const Row(
@@ -71,28 +60,18 @@ class Siginup2 extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         '۰۰.۴۵',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'shabnam',
-                          color: AppColor.black,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Text(
                         'ارسال مجدد کد',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'shabnam',
-                          color: AppColor.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ],
                   ),

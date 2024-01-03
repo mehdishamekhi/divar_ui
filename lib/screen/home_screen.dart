@@ -1,3 +1,4 @@
+import 'package:divar_ui/screen/item_detail.dart';
 import 'package:divar_ui/util/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,9 @@ class HomeScreen extends StatelessWidget {
       ),
       body: CustomScrollView(
         slivers: <Widget>[
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 10,
                 vertical: 20,
               ),
@@ -24,20 +25,12 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text(
                     'مشاهده همه',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      color: AppColor.grey,
-                      fontSize: 14,
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     'آویز های داغ',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -52,18 +45,26 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (BuildContext context, int index) {
-                    return const Padding(
-                      padding: EdgeInsets.only(right: 20),
-                      child: horizontalcontainer(),
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: InkWell(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ItemDetailScreen(),
+                          ),
+                        ),
+                        child: const horizontalcontainer(),
+                      ),
                     );
                   },
                 ),
               ),
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 10,
                 vertical: 40,
               ),
@@ -71,20 +72,12 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text(
                     'مشاهده همه',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      color: AppColor.grey,
-                      fontSize: 14,
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     'آویز های اخیر',
-                    style: TextStyle(
-                      fontFamily: 'shabnam',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -100,10 +93,20 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   itemCount: 5,
                   itemBuilder: (BuildContext context, int index) {
-                    return const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 17, vertical: 10),
-                      child: verticalcontainer(),
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 17,
+                        vertical: 10,
+                      ),
+                      child: InkWell(
+                          onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ItemDetailScreen(),
+                                ),
+                              ),
+                          child: const verticalcontainer()),
                     );
                   },
                 ),
@@ -136,48 +139,31 @@ class verticalcontainer extends StatelessWidget {
           children: [
             Image.asset('assets/images/verticalimage.png'),
             const Spacer(),
-            const Column(
+            Column(
               children: [
                 Text(
                   'ویلا ۵۰۰ متری زیر قیمت',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   'سال ساخت ۱۳۹۸\nسند تک برگ٫دوبلکس \nتجهیزات کامل',
                   textAlign: TextAlign.right,
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    color: Color.fromARGB(255, 188, 190, 193),
-                    fontSize: 12,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   children: [
                     Text(
                       '۲۵٫۶۸۳٫۰۰۰٫۰۰۰',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.red,
-                        fontSize: 14,
-                      ),
+                      style: Theme.of(context).textTheme.labelSmall,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 25,
                     ),
                     Text(
                       ':قیمت',
-                      style: TextStyle(
-                        fontFamily: 'shabnam',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                      ),
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
                   ],
                 )
@@ -217,47 +203,30 @@ class horizontalcontainer extends StatelessWidget {
               width: 192,
             ),
             const Spacer(),
-            const Text(
+            Text(
               'ویلا ۵۰۰ متری زیر قیمت',
-              style: TextStyle(
-                fontFamily: 'shabnam',
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             const Spacer(),
-            const Text(
+            Text(
               'ویو عالی٫سندتک برگ٫سال ساخت ٫۱۴۰۲تحویل فوری',
               textAlign: TextAlign.right,
-              style: TextStyle(
-                fontFamily: 'shabnam',
-                color: Color.fromARGB(255, 188, 190, 193),
-                fontSize: 12,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const Spacer(),
-            const Row(
+            Row(
               children: [
                 Text(
                   'قیمت:',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   '۲۵٫۶۸۳٫۰۰۰٫۰۰۰',
-                  style: TextStyle(
-                    fontFamily: 'shabnam',
-                    fontWeight: FontWeight.bold,
-                    color: AppColor.red,
-                    fontSize: 14,
-                  ),
+                  style: Theme.of(context).textTheme.labelSmall,
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
