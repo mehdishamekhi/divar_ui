@@ -6,6 +6,7 @@ import 'package:divar_ui/screen/login2.dart';
 import 'package:divar_ui/screen/profile_screen.dart';
 import 'package:divar_ui/screen/signup1.dart';
 import 'package:divar_ui/screen/signup2.dart';
+import 'package:divar_ui/screen/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Siginup2(),
+      home: WellcomePage(),
     );
   }
 }
