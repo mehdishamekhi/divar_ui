@@ -1,0 +1,114 @@
+import 'package:divar_ui/util/colors.dart';
+import 'package:divar_ui/widgets/red_bottom.dart';
+import 'package:divar_ui/widgets/textfield.dart';
+import 'package:flutter/material.dart';
+
+class Siginup2 extends StatelessWidget {
+  const Siginup2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 20,
+              horizontal: 15,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'تایید شماره موبایل',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'shabnam',
+                    color: AppColor.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Text(
+                    'کد ثبت نام پیامک شده را وارد کنید',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'shabnam',
+                      color: AppColor.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Textfieldcontainer(
+                      height: 48,
+                      width: 73,
+                      radius: 4,
+                      hinttext: '',
+                    ),
+                    Textfieldcontainer(
+                      height: 48,
+                      width: 73,
+                      radius: 4,
+                      hinttext: '',
+                    ),
+                    Textfieldcontainer(
+                      height: 48,
+                      width: 73,
+                      radius: 4,
+                      hinttext: '',
+                    ),
+                    Textfieldcontainer(
+                      height: 48,
+                      width: 73,
+                      radius: 4,
+                      hinttext: '',
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '۰۰.۴۵',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'shabnam',
+                          color: AppColor.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'ارسال مجدد کد',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'shabnam',
+                          color: AppColor.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Spacer(),
+                RedBottom(
+                  radius: 4,
+                  width: double.infinity,
+                  height: 48,
+                  topic: 'تایید ثبت نام',
+                  fontsize: 16,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

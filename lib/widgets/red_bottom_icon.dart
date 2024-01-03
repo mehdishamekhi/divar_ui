@@ -30,13 +30,16 @@ class RedBottomicon extends StatelessWidget {
         ),
         onPressed: () {},
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               icon,
               height: 24,
               width: 24,
             ),
-            const Spacer(),
+            const SizedBox(
+              width: 10,
+            ),
             Text(
               topic,
               style: TextStyle(
